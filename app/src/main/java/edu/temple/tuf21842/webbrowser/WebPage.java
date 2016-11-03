@@ -22,13 +22,13 @@ public class WebPage extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try {
-            WebView web = (WebView) getView().findViewById(R.id.web);
-            web.setWebViewClient(new WebViewClient());
-            web.loadUrl("https://google.com/");
-        } catch(NullPointerException e){
-            Log.d(TAG, e.toString());
-        }
+//        try {
+//            WebView web = (WebView) getView().findViewById(R.id.web);
+//            web.setWebViewClient(new WebViewClient());
+//            web.loadUrl("https://google.com/");
+//        } catch(NullPointerException e){
+//            Log.d(TAG, e.toString());
+//        }
     }
 
     @Override
