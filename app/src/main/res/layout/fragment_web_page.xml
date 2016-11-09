@@ -1,12 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fragment_web_page"
-    tools:context="edu.temple.tuf21842.webbrowser.WebPage">
-
-    <WebView
+    android:orientation="vertical"
+    android:id="@+id/fragment_web_page">
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/URL_bar"
+            android:layout_toStartOf="@+id/go_button" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go"
+            android:id="@+id/go_button"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/web"/>
-</FrameLayout>
+</LinearLayout>

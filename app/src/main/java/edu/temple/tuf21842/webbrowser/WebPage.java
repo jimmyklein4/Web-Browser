@@ -14,6 +14,7 @@ public class WebPage extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private final String TAG = "WebPage";
+    private View v;
     public WebPage() {
         // Required empty public constructor
     }
@@ -22,19 +23,22 @@ public class WebPage extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        try {
-//            WebView web = (WebView) getView().findViewById(R.id.web);
-//            web.setWebViewClient(new WebViewClient());
-//            web.loadUrl("https://google.com/");
-//        } catch(NullPointerException e){
-//            Log.d(TAG, e.toString());
-//        }
+        try {
+
+        } catch(NullPointerException e){
+            Log.d(TAG, e.toString());
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_web_page, container, false);
+        v =inflater.inflate(R.layout.fragment_web_page, container, false);
+        WebView web = (WebView) v.findViewById(R.id.web);
+        web.setWebViewClient(new WebViewClient());
+        web.loadUrl("https://google.com/");
+
+        return v;
     }
 
     public interface OnFragmentInteractionListener {
