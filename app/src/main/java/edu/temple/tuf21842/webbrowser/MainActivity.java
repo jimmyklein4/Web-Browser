@@ -17,6 +17,6 @@ public class MainActivity extends Activity {
         webPage = new WebPage();
         getFragmentManager()
                 .beginTransaction()
-                .add(R.layout.fragment_web_page, webPage)
+                .add(R.id.fragment_web_page, webPage);
     }
 }
