@@ -12,22 +12,31 @@
     <Toolbar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tools">
+        android:layout_gravity="right"
+        android:id="@+id/tools"
+        android:weightSum="1">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="P"
-            android:id="@+id/prev_page"/>
+            android:text="@string/prev"
+            android:id="@+id/prev_page"
+            android:background="@color/colorAccent"
+            style="@android:style/Widget.DeviceDefault.Button.Small"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="N"
-            android:id="@+id/next_page"/>
-        <Button
+            android:text="@string/next"
+            android:id="@+id/next_page"
+            android:background="@color/colorAccent"
+            style="@android:style/Widget.DeviceDefault.Button.Small"/>
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New"
-            android:id="@+id/new_page"/>
+            android:src="@android:drawable/ic_menu_add"
+            android:id="@+id/new_page"
+            android:background="@color/colorAccent"
+            style="@android:style/Widget.DeviceDefault.ImageButton"
+            android:layout_weight="14.75" />
 
     </Toolbar>
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
