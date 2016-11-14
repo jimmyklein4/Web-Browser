@@ -1,6 +1,7 @@
 package edu.temple.tuf21842.webbrowser;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -18,10 +19,18 @@ public class MainActivity extends Activity implements WebPage.WebpageListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Uri data = getIntent().getData();
+        String url = "http://google.com/";
+        if(data!=null){
+            url = data.toString();
+        }
         allPages = new ArrayList<>();
         setContentView(R.layout.activity_main);
         setActionBar((Toolbar)findViewById(R.id.tools));
         webPage = new WebPage();
+        Bundle args = new Bundle();
+        args.putString("URL", url);
+        webPage.setArguments(args);
         getFragmentManager()
                 .beginTransaction()
                 .add(R.id.web_frame, webPage)

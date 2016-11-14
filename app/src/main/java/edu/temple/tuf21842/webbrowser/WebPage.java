@@ -19,6 +19,7 @@ public class WebPage extends Fragment {
     private WebpageListener mListener;
     private View v;
     private final String TAG = "WebpageFragment";
+
     public WebPage() {
         // Required empty public constructor
     }
@@ -27,10 +28,12 @@ public class WebPage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v =inflater.inflate(R.layout.fragment_web_page, container, false);
+        Bundle args = getArguments();
+        String url = args.getString("URL");
         final WebView web = (WebView) v.findViewById(R.id.web);
         web.setWebViewClient(new WebViewClient());
         web.getSettings().setJavaScriptEnabled(true);
-        web.loadUrl("https://google.com/");
+        web.loadUrl(url);
 
         Button goButton = (Button) v.findViewById(R.id.go_button);
         final EditText URLbar = (EditText) v.findViewById(R.id.URL_bar);
